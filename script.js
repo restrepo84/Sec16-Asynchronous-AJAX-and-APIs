@@ -114,11 +114,31 @@ const renderCountry = function (data, className = "") {
 // }
 //* consuming promises *//
 
-const getCountryData = function (country) {
-  // Country 1
-  getJSON(`https://restcountries.com/v2/name/${country}`)
-    .then((response) => response.json())
-    .then((data) => renderCountry(data[0]));
-};
+// const getCountryData = function (country) {
+//   fetch(`https://restcountries.com/v2/name/${country}`)
+//     .then((response) => response.json())
+//     .then((data) => renderCountry(data[0]));
+// };
 
-getCountryData("portugal");
+// getCountryData("portugal");
+
+//* chaining promises *//
+// const getCountryData = function (country) {
+//   //country
+//   fetch(`https://restcountries.com/v2/name/${country}`)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       renderCountry(data[0]);
+//       const neighbour = data[0].borders[0];
+
+//       if (!neighbour) return;
+
+//       // country 2
+//       return fetch(`https://restcountries.com/v2/alpha/${neighbour}`);
+//     })
+//     .then((response) => response.json())
+//     .then((data) => renderCountry(data, "neighbour"));
+// };
+// getCountryData("portugal");
+
+//*
