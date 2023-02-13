@@ -106,5 +106,19 @@ const renderCountry = function (data, className = "") {
 
 // * Promises and the Fetch API *//
 
-const request = fetch("https://restcountries.com/v2/name/portugal");
-console.log(request);
+// const request = fetch("https://restcountries.com/v2/name/portugal");
+// console.log(request);
+
+// const getCountryData = function(country){
+//   fetch("https://restcountries.com/v2/name/portugal")
+// }
+//* consuming promises *//
+
+const getCountryData = function (country) {
+  // Country 1
+  getJSON(`https://restcountries.com/v2/name/${country}`)
+    .then((response) => response.json())
+    .then((data) => renderCountry(data[0]));
+};
+
+getCountryData("portugal");
