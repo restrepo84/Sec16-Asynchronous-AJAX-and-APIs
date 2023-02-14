@@ -174,5 +174,3 @@ const getCountryData = function (country) {
 btn.addEventListener("click", function () {
   getCountryData("mexico");
 });
-
-// getCountryData("gkjdhfgkj");
